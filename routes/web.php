@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController; // ✅ Import your controller
 
+Route::get('/', function () {
+    return view('home');
+});
+
 Route::get('/patient/create', function () {
     return view('patient.create');
 });
