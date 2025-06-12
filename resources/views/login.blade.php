@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
     <style>
         * {
@@ -12,16 +12,14 @@
         }
 
         body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url('/images/eed8191a10a1a2beb74a3526a2d2344d.jpg') no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: url("/images/eed8191a10a1a2beb74a3526a2d2344d.jpg") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
         .login-container {
             background-color: #ffffff;
@@ -40,6 +38,7 @@
 
         .form-group {
             margin-bottom: 20px;
+            position: relative;
         }
 
         .form-group label {
@@ -59,14 +58,24 @@
         }
 
         .form-group input:focus {
-            border-color: #007BFF;
+            border-color: #007bff;
             outline: none;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        .error-border {
+            border-color: red !important;
         }
 
         .login-btn {
             width: 100%;
             padding: 12px;
-            background-color: #007BFF;
+            background-color: #007bff;
             border: none;
             border-radius: 8px;
             color: white;
@@ -87,7 +96,7 @@
         }
 
         .login-footer a {
-            color: #007BFF;
+            color: #007bff;
             text-decoration: none;
         }
 
@@ -97,30 +106,72 @@
     </style>
 </head>
 <body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="Enter your email" />
+                <div class="error" id="emailError"></div>
+            </div>
 
-<div class="login-container">
-    <h2>Login Page</h2>
-    <form method="POST" action="#">
-        <!-- For Laravel, insert @csrf here -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" />
+                <div class="error" id="passwordError"></div>
+            </div>
 
-        <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="text" id="email" name="email" placeholder="Enter your email" required>
-        </div>
+            <button type="submit" class="login-btn">Login</button>
 
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password" required>
-        </div>
+            <div class="login-footer">
+                <p>Don't have an account? <a href="#">Sign up</a></p>
+                <p><a href="#">Forgot Password?</a></p>
+            </div>
+        </form>
+    </div>
 
-        <button type="submit" class="login-btn">Login</button>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function (e) {
+            e.preventDefault();
 
-        <div class="login-footer">
-            <p>Don't have an account? <a href="#">Sign up</a></p>
-            <p><a href="#">Forgot Password?</a></p>
-        </div>
-    </form>
-</div>
+            // Reset errors
+            document.getElementById("emailError").textContent = "";
+            document.getElementById("passwordError").textContent = "";
+            document.getElementById("email").classList.remove("error-border");
+            document.getElementById("password").classList.remove("error-border");
 
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let hasError = false;
+
+            // Email validation
+            if (email === "") {
+                document.getElementById("emailError").textContent = "Email is required";
+                document.getElementById("email").classList.add("error-border");
+                hasError = true;
+            } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+                document.getElementById("emailError").textContent = "Please enter a valid email";
+                document.getElementById("email").classList.add("error-border");
+                hasError = true;
+            }
+
+            // Password validation
+            if (password === "") {
+                document.getElementById("passwordError").textContent = "Password is required";
+                document.getElementById("password").classList.add("error-border");
+                hasError = true;
+            } else if (password.length < 6) {
+                document.getElementById("passwordError").textContent = "Password must be at least 6 characters";
+                document.getElementById("password").classList.add("error-border");
+                hasError = true;
+            }
+
+            if (!hasError) {
+                // You can submit form via AJAX or allow real submission here
+                alert("Form submitted successfully!");
+                // this.submit(); // for real form submission
+            }
+        });
+    </script>
 </body>
 </html>

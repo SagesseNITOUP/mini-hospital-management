@@ -8,3 +8,4 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [UserController::class, 'login']); // ✅ Correct usage
+Route::get('/Appointment', [UserController::class, 'Appointment']);
