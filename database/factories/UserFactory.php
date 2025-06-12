@@ -23,11 +23,24 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $specialities = ['cardiology', 'neurology', 'pediatrics', 'dermatology', 'oncology'];
+        $profiles = ['doctor', 'staff'];
+        $departments = ['Cardiology', 'Neurology', 'Pediatrics', 'Dermatology', 'Oncology', 'Administration'];
+
+        $profile = $this->faker->randomElement($profiles);
+        $speciality = ($profile === 'doctor') ? $this->faker->randomElement($specialities) : null;
+        $department = ($profile === 'staff') ? $this->faker->randomElement($departments) : null;
+
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
+            'name' => $this->faker->name(),
+            'email' => $this->faker->unique()->safeEmail(),
+            'phone' => $this->faker->phoneNumber(),
+            'profile' => $profile,
+            'department' => $department,
+            'isAvaillable' => $this->faker->boolean(),
+            'speciality' => $speciality,
             'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
+            'password' => bcrypt('password'), // password
             'remember_token' => Str::random(10),
         ];
     }

@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +13,39 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        $this->call([
+            UserSeeder::class,
+            AppointmentSeeder::class,
+            // Add other seeders here
         ]);
+
+
+
+        /*Doctor::create([
+            'name' => "KENNE",
+            'firstname' => "Jospin",
+            'speciality' => "Ophtamologist",
+            'phone' => "0605511914",
+            'email' => "lionel@gmail.com",
+            'password' =>Hash::make('@Lionel123@'), // password
+        ]);
+
+        Doctor::create([
+            'name' => "ABBAS",
+            'firstname' => "Tahir",
+            'speciality' => "Dentist",
+            'phone' => "0605511914",
+            'email' => "tahir@gmail.com",
+            'password' =>Hash::make('@Tahir123@'), // password
+        ]);
+
+        Doctor::create([
+            'name' => "SAADANI",
+            'firstname' => "Elyes",
+            'speciality' => "Dentist",
+            'phone' => "0605511914",
+            'email' => "elyes@gmail.com",
+            'password' =>Hash::make('@Elyes123@'), // password
+        ]);*/
     }
 }

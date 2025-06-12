@@ -100,9 +100,9 @@
 
 <div class="login-container">
     <h2>Login Page</h2>
-    <form method="POST" action="#">
+    <form method="POST" action="{{ route('submit-login') }}">
         <!-- For Laravel, insert @csrf here -->
-
+        @csrf
         <div class="form-group">
             <label for="email">Email Address</label>
             <input type="text" id="email" name="email" placeholder="Enter your email" required>
@@ -116,7 +116,7 @@
         <button type="submit" class="login-btn">Login</button>
 
         <div class="login-footer">
-            <p>Don't have an account? <a href="#">Sign up</a></p>
+            <p>Don't have an account? <a href="{{ route('register')  }}">Sign up</a></p>
             <p><a href="#">Forgot Password?</a></p>
         </div>
     </form>
