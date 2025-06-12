@@ -122,5 +122,48 @@
     </form>
 </div>
 
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Reset errors
+            document.getElementById("emailError").textContent = "";
+            document.getElementById("passwordError").textContent = "";
+            document.getElementById("email").classList.remove("error-border");
+            document.getElementById("password").classList.remove("error-border");
+
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let hasError = false;
+
+            // Email validation
+            if (email === "") {
+                document.getElementById("emailError").textContent = "Email is required";
+                document.getElementById("email").classList.add("error-border");
+                hasError = true;
+            } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+                document.getElementById("emailError").textContent = "Please enter a valid email";
+                document.getElementById("email").classList.add("error-border");
+                hasError = true;
+            }
+
+            // Password validation
+            if (password === "") {
+                document.getElementById("passwordError").textContent = "Password is required";
+                document.getElementById("password").classList.add("error-border");
+                hasError = true;
+            } else if (password.length < 6) {
+                document.getElementById("passwordError").textContent = "Password must be at least 6 characters";
+                document.getElementById("password").classList.add("error-border");
+                hasError = true;
+            }
+
+            if (!hasError) {
+                // You can submit form via AJAX or allow real submission here
+                alert("Form submitted successfully!");
+                // this.submit(); // for real form submission
+            }
+        });
+    </script>
 </body>
 </html>

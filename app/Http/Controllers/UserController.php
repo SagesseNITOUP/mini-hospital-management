@@ -67,4 +67,8 @@ class UserController extends Controller
     {
         return   view("frontend.connexion");
     }
+
+    public function Appointment(){
+        return view('Appointment');
+    }
 }
