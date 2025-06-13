@@ -189,32 +189,32 @@
                 <h1 class="hero-title mb-4">Vivez en meilleure santé</h1>
 
                 <!-- Search Form -->
-                <form class="search-form d-flex justify-content-center justify-content-lg-start">
+                <form action="{{ route('search') }}" method="GET" class="search-form d-flex justify-content-center justify-content-lg-start">
                     <div class="input-group rounded-pill bg-white shadow overflow-hidden flex-nowrap" style="max-width: 850px; width: 100%;">
-                        <!-- Search Icon -->
                         <span class="input-group-text bg-white border-0">
-              <i class="bi bi-search text-muted"></i>
-            </span>
-                        <input type="text" class="form-control border-0" placeholder="Nom, spécialité, établissement…">
+                            <i class="bi bi-search text-muted"></i>
+                        </span>
+                        <input type="text" name="query" class="form-control border-0" placeholder="Nom, spécialité, établissement…" value="{{ request('query') }}">
 
                         <div class="vr mx-2 d-none d-md-block"></div>
 
-                        <!-- Location Icon -->
                         <span class="input-group-text bg-white border-0">
-              <i class="bi bi-geo-alt text-muted"></i>
-            </span>
-                        <input type="text" class="form-control border-0" placeholder="Où ?">
+                            <i class="bi bi-geo-alt text-muted"></i>
+                        </span>
+                        <input type="text" name="location" class="form-control border-0" placeholder="Où ?" value="{{ request('location') }}">
 
                         <button type="submit" class="btn btn-dark d-flex align-items-center px-4 rounded-0 rounded-end">
                             <i class="bi bi-send me-2"></i> Rechercher
                         </button>
                     </div>
                 </form>
+
             </div>
 
             <!-- RIGHT SIDE: IMAGE -->
             <div class="col-lg-5 d-none d-lg-block position-relative">
-                <img src="/mnt/data/b31e7842-2e37-42ee-a849-17320a756ad0.png" alt="Doctor and patient" class="img-fluid hero-image" />
+                <img src="/mnt/data/b31e7842-2e37-42ee-a849-17320a756ad0.png" alt="Doctor and patient"
+                     class="img-fluid hero-image"/>
             </div>
         </div>
     </div>

@@ -64,7 +64,7 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid px-4">
-        <a class="navbar-brand fw-bold" href="#">AI Doctor</a>
+        <a class="navbar-brand fw-bold" href="{{ route('dashboard')  }}">AI Doctor</a>
         <div class="d-flex align-items-center ms-auto gap-3">
             <a href="#" class="btn btn-light btn-sm fw-semibold">Vous êtes soignant ?</a>
             <a href="#" class="nav-link"><i class="bi bi-question-circle me-1"></i> Centre d'aide</a>

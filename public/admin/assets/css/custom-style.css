@@ -1,0 +1,187 @@
+.nav-header-logo
+{
+    width: 100px;
+    height: 60px;
+    margin-left: 15px;
+}
+
+.create-new-role
+{
+    background-color: #F58634;
+    color: white;
+    width: 70px;
+    height: 30px;
+    border-radius: 10px;
+    border:none;
+    position: relative;
+    display: inline-block;
+}
+
+.create-new-role:hover {
+    background: linear-gradient(100deg, #ffbf31,#F58634);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.new-role-input-filter
+{
+    border: 1px solid #6E6E6E;
+    height: 30px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.roles-pagination
+{
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+
+
+.create-new-role .tooltiptext,.role-modal-buttons .tooltiptext {
+    visibility: hidden;
+    width: 120px; /* Adjust the width of the tooltip */
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the element */
+    left: 50%;
+    margin-left: -60px; /* Centers the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s; /* Fade-in effect */
+}
+
+/* Tooltip arrow */
+.create-new-role .tooltiptext::after,.role-modal-buttons .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* Arrow points down */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+/* Show the tooltip text when hovering over the tooltip container */
+.create-new-role:hover .tooltiptext,.role-modal-buttons:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.role-modal-buttons
+{
+    background-color: #F58634;
+    border:none;
+    position: relative;
+    display: inline-block;
+    color: white;
+
+}
+
+.role-modal-buttons:hover
+{
+    background: linear-gradient(100deg, #ffbf31,#F58634);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    color: white;
+}
+
+
+
+.role-modal-buttons:nth-child(3)
+{
+    background-color: #E23428;
+    color: white;
+}
+.role-modal-buttons:nth-child(3):hover
+{
+    background: #e65248;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    color: white;
+}
+
+.role-name-input
+{
+    border:1px solid #F78F34;
+}
+
+.role-name-input:focus
+{
+    border:1px solid #F78F34;
+}
+
+.search-role-input
+{
+    width: 50%;
+    height: 40px;
+    border:1px solid #F78F34;
+}
+.search-role-input:hover
+{
+    border:1px solid #F78F34;
+}
+
+/*delete , edit, assign permission*/
+
+.delete-role .tooltiptext,.edit-role .tooltiptext,.assign-permissions-to-role .tooltiptext {
+    visibility: hidden;
+    width: 120px; /* Adjust the width of the tooltip */
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the element */
+    left: 50%;
+    margin-left: -60px; /* Centers the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s; /* Fade-in effect */
+}
+
+/* Tooltip arrow */
+.delete-role .tooltiptext::after,.edit-role .tooltiptext::after,.assign-permissions-to-role .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* Arrow points down */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+/* Show the tooltip text when hovering over the tooltip container */
+.delete-role:hover .tooltiptext,.edit-role:hover .tooltiptext,.assign-permissions-to-role:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.delete-role,.edit-role,.assign-permissions-to-role
+{
+    position: relative;
+    display: inline-block;
+    color: white;
+
+}
+
+/*for role permissions*/
+.permissions-separator
+{
+    font-size: 13px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.role-permission-title
+{
+    font-size: 15px;
+}

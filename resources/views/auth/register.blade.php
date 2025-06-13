@@ -219,13 +219,6 @@
                     </div>
                 </div>
 
-                <div class="terms-check">
-                    <input type="checkbox" class="form-check-input" id="terms" required>
-                    <label for="terms" class="form-check-label">
-                        J'accepte les <a href="#" class="text-decoration-none">conditions d'utilisation</a> et la <a href="#" class="text-decoration-none">politique de confidentialité</a>
-                    </label>
-                </div>
-
                 <button type="submit" class="btn btn-register">
                     <i class="bi bi-person-plus"></i> S'inscrire
                 </button>

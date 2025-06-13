@@ -16,10 +16,14 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone')->nullable();
+            $table->string('city')->nullable();
+            $table->string('address')->nullable();
             $table->enum('profile', ['doctor', 'staff'])->nullable();
             $table->string('department')->nullable();
             $table->boolean('isAvaillable')->default(false);
             $table->enum('speciality', ['cardiology', 'neurology', 'pediatrics', 'dermatology', 'oncology'])->nullable();
+            $table->string('email_verification_code')->nullable();
+            $table->string('reset_code')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
